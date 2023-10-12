@@ -80,8 +80,8 @@ module Paperclip
       # name +[attachment]_content_type+ to be able to use this validator.
       def validates_attachment_content_type(*attr_names)
         options = _merge_attributes(attr_names)
-        validates_with AttachmentContentTypeValidator, options.dup
-        validate_before_processing AttachmentContentTypeValidator, options.dup
+        validates_with AttachmentContentTypeValidator, **options.dup
+        validate_before_processing AttachmentContentTypeValidator, **options.dup
       end
     end
   end
